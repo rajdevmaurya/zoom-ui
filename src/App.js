@@ -11,6 +11,8 @@ let App = () =>{
       <NavBar/>
       <Routes>
         <Route path={"/"} element={<PatientList/>}/>
+        <Route path={"/patient/history/:patientId"} element={''}/>
+        <Route path={"/patient/rx/:patientId"} element={''}/>
        </Routes>    
     </React.Fragment>
   );
