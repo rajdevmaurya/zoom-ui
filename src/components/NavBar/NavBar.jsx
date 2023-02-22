@@ -26,6 +26,9 @@ const NavBar = () => {
                 <i className="fa-solid fa-chevron-right"></i>
             </a>
             <ul className="sidebar__categ__list level-2">
+            <li className="sidebar__categ__list__item">
+                    <a href="/patient/list" className="sidebar__categ__list__link">Patients</a>
+                </li>
                 <li className="sidebar__categ__list__item">
                     <a href="/patient/add" className="sidebar__categ__list__link">Add</a>
                 </li>

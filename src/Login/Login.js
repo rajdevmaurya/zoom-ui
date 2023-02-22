@@ -57,13 +57,13 @@ class Login extends React.Component {
 
     if(!isValid)return;
     //ServerCall.fnPost('user',{data:this.data})
-    ServerCall.fnGet('user')
+    ServerCall.fnGet('users')
     .then((res)=>{
       let result=res.data
       if(result.length > 0){
        sessionStorage.isLoggedIn=true
-       sessionStorage.user=result[0].uid
-       sessionStorage.token=result[0].token
+       sessionStorage.user=result[0].id
+       sessionStorage.token=result[0].name
        store.dispatch({
          type:'LOGIN'
        })

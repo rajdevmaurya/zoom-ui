@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const baseUrl="http://localhost:2020/"
+//const baseUrl="http://localhost:2020/"
+const baseUrl="https://jsonplaceholder.typicode.com/"
 
 axios.interceptors.request.use(
   (req)=>{
