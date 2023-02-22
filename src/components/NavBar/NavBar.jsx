@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from "react-router-dom";
 import '../../css/main.css'
 import $ from 'jquery';
 import '../../js/ap'
@@ -11,8 +11,8 @@ const NavBar = () => {
  <div className="content__wrapper">
 <aside className="sidebar sidebar--expanded">
     <div className="sidebar__logo">
-        <a href="#" title="NaveenAgro" className="sidebar__logo--full">IZoom</a>
-        <a href="#" title="NaveenAgro" className="sidebar__logo--half">IZ</a>
+        <a href="#" title="Izoom" className="sidebar__logo--full">IZoom</a>
+        <a href="#" title="Izoom" className="sidebar__logo--half">IZ</a>
     </div>
     <ul className="sidebar__categ__list level-1">
         <li className="sidebar__categ__list__item menu__open">
@@ -27,7 +27,10 @@ const NavBar = () => {
             </a>
             <ul className="sidebar__categ__list level-2">
                 <li className="sidebar__categ__list__item">
-                    <a href="#" className="sidebar__categ__list__link">Sub Items</a>
+                    <a href="/patient/add" className="sidebar__categ__list__link">Add</a>
+                </li>
+                <li className="sidebar__categ__list__item">
+                    <a href="/patient/rx" className="sidebar__categ__list__link">Rx</a>
                 </li>
             </ul>
         </li>

@@ -2,7 +2,6 @@ import './App.css';
 import React from 'react'
 import {BeforeLogin} from './BeforeLogin';
 import {AfterLogin} from './AfterLogin'
-import NavBar from './components/NavBar/NavBar';
 import {connect} from 'react-redux'
 import { useEffect } from 'react';
 import {store} from './appStore/store'

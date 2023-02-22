@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import '../../css/main.css'
 import $ from 'jquery';
 import '../../js/ap'
+
+
 const Sidebar = () => {
   return (
     <React.Fragment>
@@ -47,7 +49,95 @@ const Sidebar = () => {
             </li>
           </ul>
         </aside>
-     </div>
+
+        <main className="main__section">
+
+          <header className="header">
+            <div className="container">
+
+              <button className="btn btn--icon btn--transparent" id="header_menu">
+                <i className="fa-solid fa-bars"></i>
+              </button>
+              <form className="header__search__form">
+                <input type="search" id="search" placeholder="Search by" />
+                <button type="submit" className="btn btn--icon btn--transparent">
+                  <i className="fa-solid fa-magnifying-glass"></i>
+                </button>
+              </form>
+
+              <div className="header__user">
+                <button className="btn btn--icon btn--transparent" id="header_user">
+                  <i className="fa-solid fa-user-large"></i>
+                </button>
+
+                <div className="header__user__info">
+                  <ul className="header__user__info__list">
+                    <li className="header__user__info__list__item">My Account</li>
+                  </ul>
+                  <ul className="header__user__info__list header__user__info__list--bottom">
+                    <li className="header__user__info__list__item">Log out</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </header>
+
+          <section className="body__content">
+
+            <div className="btn__wrapper bg-gray mb-3 alert">
+              <button className="btn btn--white"><i className="fa fa-plus-circle me-2"></i> Add</button>
+              <button className="btn btn--icon btn-gray"><i className="fa fa-solid fa-rotate"></i></button>
+              <button className="btn btn--white"><i className="fa fa-plus-circle me-2"></i> Rx</button>
+              <button className="btn btn--icon btn--transparent close">
+                <i className="fa-solid fa-xmark"></i>
+              </button>
+            </div>
+
+            <div class="container mb-4">
+                    <table id="customer_table" class="display customer__table">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Customer Name</th>
+                                <th>Phone</th>
+                                <th>Address</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td></td>
+                                <td>Application</td>
+                                <td>9999999999</td>
+                                <td>Delhi, India</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>Application</td>
+                                <td>9999999999</td>
+                                <td>Delhi, India</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>Application</td>
+                                <td>9999999999</td>
+                                <td>Delhi, India</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>Application</td>
+                                <td>9999999999</td>
+                                <td>Delhi, India</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+          </section>
+
+        </main>
+
+      </div>
+
     </React.Fragment>
   )
 }

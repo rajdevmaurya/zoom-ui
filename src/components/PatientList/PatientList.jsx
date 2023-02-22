@@ -1,5 +1,6 @@
 import React from 'react'
 import {store} from '../../appStore/store'
+import { NavLink } from "react-router-dom";
 const PatientList = () => {
     const fnLogout=()=>{
         sessionStorage.clear();
@@ -48,7 +49,7 @@ const PatientList = () => {
                     </table>
 
                 </div>
-                <li onClick={fnLogout}>Logout</li>
+                <li onClick={fnLogout}><NavLink to ="/">Logout </NavLink></li>
         </React.Fragment>
     )
 }
