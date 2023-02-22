@@ -88,9 +88,12 @@ const NavBar = () => {
     <section className="body__content">
         
         <div className="btn__wrapper bg-gray mb-3 alert">
-            <button className="btn btn--white"><i className="fa-solid fa-plus"></i> Add</button>
+            <button className="btn btn--white"><i className="fa fa-plus-circle"></i>
+             <a href="/patient/add">Add</a>
+             </button>
             <button className="btn btn--icon btn-gray"><i className="fa-solid fa-rotate"></i></button>
-            <button className="btn btn--white"><i className="fa-solid fa-plus"></i> Rx</button>
+            <button className="btn btn--white"><i className="fa fa-plus-circle"></i>
+            <a href="/patient/rx" >Rx</a></button>
             <button className="btn btn--icon btn--transparent close">
             <i className="fa-solid fa-xmark"></i>
             </button>

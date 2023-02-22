@@ -10,11 +10,12 @@ const PatientList = () => {
       }
     return (
         <React.Fragment>
-            <div className="container mb-4">
+            <div className="container mb-12">
                     <table id="customer_table" className="display customer__table">
                         <thead>
                             <tr>
                                 <th></th>
+                                <th>Rx</th>
                                 <th>Customer Name</th>
                                 <th>Phone</th>
                                 <th>Address</th>
@@ -23,24 +24,28 @@ const PatientList = () => {
                         <tbody>
                             <tr>
                                 <td></td>
+                                <td><input type="radio"/></td>
                                 <td>Application</td>
                                 <td>9999999999</td>
                                 <td>Delhi, India</td>
                             </tr>
                             <tr>
                                 <td></td>
+                                <td><input type="radio"/></td>
                                 <td>Application</td>
                                 <td>9999999999</td>
                                 <td>Delhi, India</td>
                             </tr>
                             <tr>
                                 <td></td>
+                                <td><input type="radio"/></td>
                                 <td>Application</td>
                                 <td>9999999999</td>
                                 <td>Delhi, India</td>
                             </tr>
                             <tr>
                                 <td></td>
+                                <td><input type="radio"/></td>
                                 <td>Application</td>
                                 <td>9999999999</td>
                                 <td>Delhi, India</td>
