@@ -27,6 +27,7 @@ class ServerCall{
    }
 
    static fnPost(url,data){
+     alert(data);
     return axios.post(baseUrl+url,data)
    }
 

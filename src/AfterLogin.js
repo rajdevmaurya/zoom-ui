@@ -1,29 +1,22 @@
 import React from 'react'
 import {Link,BrowserRouter,Routes, Route,Navigate} from 'react-router-dom'
-import Home from './Home/index';
 import Profile from './Profile/index'
 import {store} from './appStore/store'
+import Login from './Login/index';
+import NavBar from './components/NavBar/NavBar';
+import PatientList from './components/PatientList/PatientList';
+import {BeforeLogin} from './BeforeLogin';
 export const AfterLogin = () => {
-  const fnLogout=()=>{
-    sessionStorage.clear();
-    store.dispatch({
-      type:'LOGOUT'
-    })
-  }
   return (
-    <div>
+    <React.Fragment>
+      <NavBar/>
       <BrowserRouter>
-       <ul className='menu'>
-         <li><Link to='/home'>Home</Link></li>
-         <li><Link to='/profile'>Profile</Link></li>
-         <li onClick={fnLogout}><Link to='/login'>Logout</Link></li>
-       </ul>
         <Routes>
-          <Route path='/home' element={<Home/>} />
-          <Route path='/profile' element={<Profile/>} />
-          <Route path='*' element={<Navigate to="home" />} />
+          <Route path='/list' element={<PatientList/>} />
+          <Route path='*' element={<Navigate to="list" />} />
+         
         </Routes>
        </BrowserRouter>
-    </div>
+       </React.Fragment>
   )
 }

@@ -56,41 +56,41 @@ class Login extends React.Component {
     this.fnPrepareTemplate()
 
     if(!isValid)return;
-    
-    ServerCall.fnPost('std/login',{data:this.data})
+    //ServerCall.fnPost('user',{data:this.data})
+    ServerCall.fnGet('user')
     .then((res)=>{
-       let result=res.data
-       if(result.length > 0){
-        sessionStorage.isLoggedIn=true
-        sessionStorage.user=result[0].uid
-        sessionStorage.token=result[0].token
-        store.dispatch({
-          type:'LOGIN'
-        })
-       }else{
-        alert('Please check ented uid or pwd')
-      }
-    })
-    .catch((res)=>{
-      alert('something went wrong')
-    })
+      let result=res.data
+      if(result.length > 0){
+       sessionStorage.isLoggedIn=true
+       sessionStorage.user=result[0].uid
+       sessionStorage.token=result[0].token
+       store.dispatch({
+         type:'LOGIN'
+       })
+      }else{
+       alert('Please check ented uid or pwd')
+     }
+   })
+   .catch((res)=>{
+     alert('something went wrong')
+   })
 
+  
    
-    
-  }
+ }
 
-  fnPrepareTemplate=()=>{
-   let inputControlsArr= inputControls.map((obj,index)=>{
-        return <TextBox key={index} obj={obj} fnChange={this.fnChange} />
-    })
-    this.setState({
-      template:inputControlsArr
-    })
-  }
+ fnPrepareTemplate=()=>{
+  let inputControlsArr= inputControls.map((obj,index)=>{
+       return <TextBox key={index} obj={obj} fnChange={this.fnChange} />
+   })
+   this.setState({
+     template:inputControlsArr
+   })
+ }
 
-  render() {
-    return template.call(this);
-  }
+ render() {
+   return template.call(this);
+ }
 }
 
 export default Login;

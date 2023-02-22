@@ -1,21 +1,40 @@
-import React from 'react';
 import './App.css';
-import {Routes,Route,Navigate} from 'react-router-dom'
+import React from 'react'
+import {BeforeLogin} from './BeforeLogin';
+import {AfterLogin} from './AfterLogin'
 import NavBar from './components/NavBar/NavBar';
-import {Login} from './Login/Login'
-import PatientList from './components/PatientList/PatientList';
+import {connect} from 'react-redux'
+import { useEffect } from 'react';
+import {store} from './appStore/store'
+function App(props) {
 
-let App = () =>{
+  useEffect(()=>{
+      let isLoggedIn= sessionStorage.isLoggedIn
+     
+      if(isLoggedIn=='true'){
+        store.dispatch({
+          type:'LOGIN'
+        })
+      }
+  },[])
   return (
     <React.Fragment>
-      <NavBar/>
-      <Routes>
-        <Route path={"/"} element={<PatientList/>}/>
-        <Route path={"/patient/history/:patientId"} element={''}/>
-        <Route path={"/patient/rx/:patientId"} element={''}/>
-       </Routes>    
-    </React.Fragment>
+    
+         {
+           
+           props.isLoggedIn ? <AfterLogin/> : <BeforeLogin />
+         }
+     
+     </React.Fragment>
   );
 }
+
+App=connect(
+  (state)=>{
+    return {
+       isLoggedIn:state.reducer.isLoggedIn
+    }
+  }
+)(App)
 
 export default App;

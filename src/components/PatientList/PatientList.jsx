@@ -1,22 +1,54 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-
+import {store} from '../../appStore/store'
 const PatientList = () => {
+    const fnLogout=()=>{
+        sessionStorage.clear();
+        store.dispatch({
+          type:'LOGOUT'
+        })
+      }
     return (
         <React.Fragment>
-            <section className="contact-search p-3">
-                <div className="containetr">
-                    <div className="grid">
-                        <div className="row">
-                            <div className="col">
-                                <p className="h3">PatientList List
-                                </p>
-                              </div>
-                        </div>
-                      </div>
-                </div>
-            </section>
+            <div className="container mb-4">
+                    <table id="customer_table" className="display customer__table">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Customer Name</th>
+                                <th>Phone</th>
+                                <th>Address</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td></td>
+                                <td>Application</td>
+                                <td>9999999999</td>
+                                <td>Delhi, India</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>Application</td>
+                                <td>9999999999</td>
+                                <td>Delhi, India</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>Application</td>
+                                <td>9999999999</td>
+                                <td>Delhi, India</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>Application</td>
+                                <td>9999999999</td>
+                                <td>Delhi, India</td>
+                            </tr>
+                        </tbody>
+                    </table>
 
+                </div>
+                <li onClick={fnLogout}>Logout</li>
         </React.Fragment>
     )
 }
