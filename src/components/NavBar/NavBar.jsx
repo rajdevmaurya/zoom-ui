@@ -3,9 +3,16 @@ import { NavLink } from "react-router-dom";
 import '../../css/main.css'
 import $ from 'jquery';
 import '../../js/ap'
+import {store} from '../../appStore/store'
 
 
 const NavBar = () => {
+    const fnLogout=()=>{
+        sessionStorage.clear();
+        store.dispatch({
+          type:'LOGOUT'
+        })
+      }
   return (
  <React.Fragment>
  <div className="content__wrapper">
@@ -35,6 +42,7 @@ const NavBar = () => {
                 <li className="sidebar__categ__list__item">
                     <a href="/patient/rx" className="sidebar__categ__list__link">Rx</a>
                 </li>
+                
             </ul>
         </li>
         <li className="sidebar__categ__list__item">
@@ -43,7 +51,7 @@ const NavBar = () => {
             </a>
             <ul className="sidebar__categ__list level-2">
                 <li className="sidebar__categ__list__item">
-                    <a href="#" className="sidebar__categ__list__link">Child</a>
+                    <a href="/" className="sidebar__categ__list__link" onClick={fnLogout} >Logout</a>
                 </li>
             </ul>
         </li>

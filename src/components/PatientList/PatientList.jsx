@@ -1,62 +1,13 @@
-import React from 'react'
-import {store} from '../../appStore/store'
-import { NavLink } from "react-router-dom";
-const PatientList = () => {
-    const fnLogout=()=>{
-        sessionStorage.clear();
-        store.dispatch({
-          type:'LOGOUT'
-        })
-      }
-    return (
-        <React.Fragment>
-            <div className="container mb-12">
-                    <table id="customer_table" className="display customer__table">
-                        <thead>
-                            <tr>
-                                <th></th>
-                                <th>Rx</th>
-                                <th>Customer Name</th>
-                                <th>Phone</th>
-                                <th>Address</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td></td>
-                                <td><input type="radio"/></td>
-                                <td>Application</td>
-                                <td>9999999999</td>
-                                <td>Delhi, India</td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td><input type="radio"/></td>
-                                <td>Application</td>
-                                <td>9999999999</td>
-                                <td>Delhi, India</td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td><input type="radio"/></td>
-                                <td>Application</td>
-                                <td>9999999999</td>
-                                <td>Delhi, India</td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td><input type="radio"/></td>
-                                <td>Application</td>
-                                <td>9999999999</td>
-                                <td>Delhi, India</td>
-                            </tr>
-                        </tbody>
-                    </table>
+import React from "react";
+import TableComponent from '../../TableComponent/TableComponent';
+import PaginationComponent from '../../PaginationComponent/PaginationComponent';
+function template() {
+  return (
+    <div className="photos">
+      <TableComponent heading="PatientList" headers={this.state.headers} data={this.state.tableData} keys={this.state.keys} />
+      <PaginationComponent total={this.state.totalData} tableData={this.fnGetTableData} />
+    </div>
+  );
+};
 
-                </div>
-                <li onClick={fnLogout}><NavLink to ="/">Logout </NavLink></li>
-        </React.Fragment>
-    )
-}
-
-export default PatientList;
+export default template;
